@@ -8,7 +8,7 @@ from tensorflow.keras.models import load_model
 import os
 import sys
 import webbrowser
-
+i,i9i,
 # Configuration should be similar to that of the trained model
 MODEL_PATH = "MobBiLSTM_model3_saved5.keras" # path to trained model
 CAMERA_ID = 0
