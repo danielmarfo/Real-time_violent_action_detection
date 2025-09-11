@@ -8,14 +8,14 @@ from tensorflow.keras.models import load_model
 import os
 import sys
 import webbrowser
-i,i9i,
+
 # Configuration should be similar to that of the trained model
 MODEL_PATH = "MobBiLSTM_model3_saved5.keras" # path to trained model
 CAMERA_ID = 0
 FRAME_WIDTH = 640
 FRAME_HEIGHT = 480
 CLIP_LEN = 16
-TARGET_SIZE = (64,64)
+TARGET_SIZE = (64, 64)
 PRED_THRESH = 0.5
 ALARM_FILE = "mixkit-facility-alarm-sound-999.mp3" 
 
@@ -44,27 +44,6 @@ alarm_thread = None
 pred_prob = None
 
 alarm_lock = threading.Lock()
-
-# Alarm functions to play on the server and not the cloud (commented out to avoid dependency issues)
-# def play_alarm_continuous():
-#     """Plays alarm continuously while violence_detected is True."""
-#     while violence_detected:
-#         if os.name == "nt":  # Windows
-#             os.system(f'start /min {ALARM_FILE}')
-#         else:  # macOS/Linux
-#             os.system(f'afplay {ALARM_FILE} >/dev/null 2>&1' if sys.platform == 'darwin' else f'mpg123 {ALARM_FILE} >/dev/null 2>&1')
-#         time.sleep(2)  # adjust to sound length
-
-# def start_alarm():
-#     global alarm_thread
-#     with alarm_lock:
-#         if alarm_thread is None or not alarm_thread.is_alive():
-#             alarm_thread = threading.Thread(target=play_alarm_continuous, daemon=True)
-#             alarm_thread.start()
-
-# def stop_alarm():
-#     global violence_detected
-#     violence_detected = False
 
 # Video capture thread
 class VideoCaptureThread(threading.Thread):
@@ -209,8 +188,8 @@ if __name__ == "__main__":
 # import sys
 # import webbrowser
 
-## path to trained model (expects 15x2048)
-# MODEL_PATH = "loca2\mymodel101.keras"  
+# # path to trained model (expects 15x2048)
+# MODEL_PATH = "mymodel101.keras"  
 # CAMERA_ID = 0
 # FRAME_WIDTH = 640
 # FRAME_HEIGHT = 480
@@ -290,7 +269,7 @@ if __name__ == "__main__":
 
 #                 prob = float(preds[0][0])
 #                 pred_prob = prob
-#                 pred_label = "Violent" if prob >= PRED_THRESH else "Non-Violent"
+#                 pred_label = "Non-Violent" if prob >= PRED_THRESH else "Violent"
 
 #                 # Set flag
 #                 violence_detected = pred_label == "Violent"
