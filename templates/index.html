@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>AI Violence Detection System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header>
+    <h1>AI Violence Detection System</h1>
+    <p>Real-time monitoring with advanced AI-powered threat detection</p>
+  </header>
+
+  <!-- System Status -->
+  <section class="status-panel">
+    <div class="status-item">
+      <span id="model-status" class="ready">Ready</span>
+      <small>AI Model</small>
+    </div>
+    <div class="status-item">
+      <span id="threat-level">--</span>
+      <small>--</small>
+    </div>
+    <div class="status-item">
+      <span id="monitoring-status" class="inactive">Inactive</span>
+      <small>Monitoring</small>
+    </div>
+  </section>
+
+  <!-- Live Video Feed -->
+  <section class="video-section">
+    <h2>Live Video Feed</h2>
+    <div class="video-container">
+      <img id="video" src="" alt="Video feed inactive">
+      <p id="video-placeholder">Video feed inactive</p>
+    </div>
+  </section>
+
+  <!-- Controls -->
+  <section class="controls">
+    <button id="monitor-btn" class="btn green">▶ Start Monitoring</button>
+    <button id="stop-alarm" class="btn red" disabled>🔇 Stop Alarm</button>
+  </section>
+
+  <!-- Alarm sound -->
+  <audio id="alarm-sound" src="{{ url_for('static', filename='mixkit-facility-alarm-sound-999.mp3') }}"></audio>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
