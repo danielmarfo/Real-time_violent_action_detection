@@ -10,7 +10,7 @@ import sys
 import webbrowser
 
 # Configuration should be similar to that of the trained model
-MODEL_PATH = "MobBiLSTM_model3_saved5.keras" # path to trained model
+MODEL_PATH = "MobBiLSTM_model_saved101 (3).keras" # path to trained model
 CAMERA_ID = 0
 FRAME_WIDTH = 640
 FRAME_HEIGHT = 480
